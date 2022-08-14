@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+
+<!-- Default response-->
+
+<category><pattern>*</pattern>
+    <template>I'm sorry. I don't understand. To start from the beginning, say "Hello"</template>
+</category>
+
+<category>
+    <pattern>HELLO</pattern>
+    <template>Hello friend. I can recommend a career path if you would answer a few questions. <br></br>
+    Would you like to begin?
+    <button><text>Yes</text><postback>START</postback></button>
+    <button><text>No</text><postback>END</postback></button></template>
+</category>
+
+<!-- Start Quiz-->
+<category>
+    <pattern>START</pattern>
+    <template>Great! Let's get started. I'm going to ask you a few basic questions. Select the answer that fits you the most. For the first question, What interests you more?
+    <br></br>
+    <button><text>Coding</text><postback>CODE</postback></button>
+    <button><text>Data</text><postback>DATA</postback></button>
+    </template>
+</category>
+    
+<!--Likes Code Questions-->
+
+<category>
+    <pattern>CODE</pattern>
+    <template>Do you want to use your artistic abilities?
+    <button><text>Yes</text><postback>ARTIST</postback></button>
+    <button><text>No</text><postback>NOTARTIST</postback></button>
+    </template>
+</category>
+
+<category>
+    <pattern>ARTIST</pattern>
+    <template>Do you like video games?
+    <button><text>Yes</text><postback>GAMER</postback></button>
+    <button><text>No</text><postback>NOTGAMER</postback></button>
+    </template>
+</category>
+
+<category>
+    <pattern>NOTARTIST</pattern>
+    <template>Do you want to learn multiple programming languages?<br></br>
+    <button><text>Yes</text><postback>SOFTWARE DEV</postback></button>
+    <button><text>No</text><postback>NO MATCH</postback></button></template>
+</category>
+
+
+<category>
+    <pattern>NOTGAMER</pattern>
+    <template>Do you enjoy graphic design?<br></br>
+    <button><text>Yes</text><postback>WEBSITE</postback></button>
+    <button><text>No</text><postback>NO MATCH</postback></button></template>
+</category>
+
+
+
+<!--Likes Data Questions-->
+<category>
+    <pattern>DATA</pattern>
+    <template>Do you like developing insights and business strategies?<br></br>
+    <button><text>Yes</text><postback>DATA ANALYST</postback></button>
+    <button><text>No</text><postback>NOT DATA ANALYST</postback></button></template>
+</category>
+
+<category>
+    <pattern>NOT DATA ANALYST</pattern>
+    <template>Do you find artificial intelligence like me fascinating?
+    <button><text>Yes</text><postback>ML ENGINEER</postback></button>
+    <button><text>No</text><postback>NO MATCH</postback></button></template>
+</category>
+
+
+
+<!--Data Jobs-->
+
+<category>
+    <pattern>ML ENGINEER</pattern>
+    <template>Then I recommend the role of Machine Learning Engineer.
+Machine Learning Engineers are responsible for machine learning models and retraining systems when needed.
+For more information, click the link below.
+<link>
+    <text>Machine Learning Engineer</text>
+    <url>https://www.techtarget.com/searchenterpriseai/definition/machine-learning-engineer-ML-engineer#:~:text=A%20machine%20learning%20engineer%20(ML,systems%20to%20automate%20predictive%20models.</url>
+</link>
+Would you like to try again?
+    <button><text>Yes</text><postback>START</postback></button>
+    <button><text>No</text><postback>END</postback></button></template>
+</category>
+
+<category>
+    <pattern>DATA ANALYST</pattern>
+    <template>Then I recommend Data Analyst<br></br>
+    Data analysts use data analysis tools and help their teams develop insights and business strategies.<br></br>
+For more information, click the link below.
+    <link>
+        <text>What does a data analyst do?</text>
+        <url>https://www.careerexplorer.com/careers/data-analyst/</url>
+    </link>
+    Would you like to try again?
+    <button><text>Yes</text><postback>START</postback></button>
+    <button><text>No</text><postback>END</postback></button></template>
+</category>
+
+<!--Coding Jobs-->
+
+<category>
+    <pattern>SOFTWARE DEV</pattern>
+    <template>Then I recommend Software Engineer.<br></br>
+    Software Engineers create applications that run on computers. They have a strong background in computer programming and interpersonal skills to collaborate with others on projects. Also, being detail-oriented and able to juggle multiple aspects are highly valued.<br></br>
+    For more information, click the link below.
+<link>
+    <text>What does a software engineer do?</text>
+    <url>https://www.careerexplorer.com/careers/software-engineer/</url>
+</link>
+    Would you like to try again?
+    <button><text>Yes</text><postback>START</postback></button>
+    <button><text>No</text><postback>END</postback></button></template>
+</category>
+
+<category>
+    <pattern>WEBSITE</pattern>
+    <template>Then I recommend Web Developer<br></br>
+    Web Developers are programmers concentrating on coding, designing, and building out the layout of a website. Web developers use graphic design and have a collaborative mindset while working with other designers on projects.<br></br>
+    For more information, click the link below.
+<link>
+    <text>What does a web developer do?</text>
+    <url>https://www.careerexplorer.com/careers/web-developer/</url>
+</link>
+    Would you like to try again?
+    <button><text>Yes</text><postback>START</postback></button>
+    <button><text>No</text><postback>END</postback></button></template>
+</category>
+
+<category>
+    <pattern>GAMER</pattern>
+    <template>Then I recommend Video Game Designer<br></br>
+ Video game designers tell stories as well as program. They create worlds, scenarios, and intriguing gameplay to make players want to spend more time in the game.<br></br>
+    For more information, click the link below.
+<link>
+    <text>What does a video game designer do?</text>
+    <url>https://www.careerexplorer.com/careers/video-game-designer/</url>
+</link>
+    Would you like to try again?
+    <button><text>Yes</text><postback>START</postback></button>
+    <button><text>No</text><postback>END</postback></button></template>
+</category>
+
+<!--NO MATCH-->
+<category>
+    <pattern>NO MATCH</pattern>
+    <template>I'm sorry, but I can't find a job that fits your interests.
+    Would you like to try again?
+    <button><text>Yes</text><postback>START</postback></button>
+    <button><text>No</text><postback>END</postback></button></template>
+</category>
+
+<category>
+    <pattern>END</pattern>
+    <template>Thank you, and have a great day!</template>
+</category>
+
+</aiml>
